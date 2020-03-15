@@ -6,7 +6,7 @@ Integrantes:
 
 *Arguelles Macosay Mariana
 
-*Chavez Magaña Manuel 
+*Chávez Magaña Manuel 
 
 *Carlos Eduardo Rivera Lima
 
