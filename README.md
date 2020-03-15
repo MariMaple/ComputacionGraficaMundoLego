@@ -8,5 +8,5 @@ Integrantes:
 
 *Chavez Magaña Manuel 
 
-*Carlos
+*Carlos Eduardo Rivera Lima
 
