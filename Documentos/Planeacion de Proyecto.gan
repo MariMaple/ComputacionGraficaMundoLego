@@ -104,6 +104,7 @@
         <allocation task-id="146" resource-id="0" function="2" responsible="true" load="100.0"/>
         <allocation task-id="159" resource-id="0" function="2" responsible="true" load="100.0"/>
         <allocation task-id="179" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="204" resource-id="0" function="2" responsible="false" load="100.0"/>
         <allocation task-id="19" resource-id="1" function="3" responsible="false" load="100.0"/>
         <allocation task-id="58" resource-id="1" function="3" responsible="true" load="100.0"/>
         <allocation task-id="88" resource-id="1" function="3" responsible="true" load="100.0"/>
@@ -126,7 +127,6 @@
         <allocation task-id="181" resource-id="2" function="1" responsible="true" load="100.0"/>
         <allocation task-id="178" resource-id="2" function="1" responsible="true" load="100.0"/>
         <allocation task-id="180" resource-id="2" function="1" responsible="false" load="100.0"/>
-        <allocation task-id="204" resource-id="2" function="1" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
