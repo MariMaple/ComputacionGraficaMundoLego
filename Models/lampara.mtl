@@ -1,0 +1,13 @@
+# Blender MTL File: 'lampara.blend'
+# Material Count: 1
+
+newmtl foco
+Ns 238.842962
+Ka 0.363636 0.363636 0.363636
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\maria\\Documents\\Visual Studio 2019\\Proyectos\\Computacion Grafica\\Computacion-Grafica-Proyecto\\Textures\\lampara1.jpg
