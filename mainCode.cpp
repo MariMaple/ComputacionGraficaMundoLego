@@ -105,6 +105,9 @@ Model FocoAzul;
 Model FocoVerde;
 Model Sol;
 Model TRIKE;
+Model bronto;
+Model raptor;
+
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -315,6 +318,10 @@ int main()
 	Sol.LoadModel("Models/sol.obj");
 	TRIKE = Model();
 	TRIKE.LoadModel("Models/TRIKE.obj");
+	bronto = Model();
+	bronto.LoadModel("Models/bronto.obj");
+	raptor = Model();
+	raptor.LoadModel("Models/raptor.obj");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -1174,7 +1181,21 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		TRIKE.RenderModel();
 
+		//bronto
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -1.8f, -3.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		bronto.RenderModel();
 
+		//raptor
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -5.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		raptor.RenderModel();
 
 
 
