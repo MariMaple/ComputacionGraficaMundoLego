@@ -84,7 +84,26 @@ Model Reja;
 Model Piso;
 Model Elfo;
 Model Camino;
-
+Model Kiosco_madera;
+Model Kiosco_base;
+Model Kiosco2;
+Model Kiosco4;
+Model Kiosco6;
+Model Kiosco8;
+Model Kiosco10;
+Model Kiosco12;
+Model Kiosco14;
+Model Kiosco16;
+Model Kiosco18;
+Model Kiosco20;
+Model Kiosco_columnas;
+Model Kiosco_punta;
+Model Escalones;
+Model FocoRojo;
+Model FocoAmarillo;
+Model FocoAzul;
+Model FocoVerde;
+Model Sol;
 Model TRIKE;
 
 Skybox skybox;
@@ -253,21 +272,118 @@ int main()
 	Pino1 = Model();
 	Pino1.LoadModel("Models/pinolego.obj");
 
+	//Modelos del kiosco
+	Kiosco_madera = Model();
+	Kiosco_madera.LoadModel("Models/kioscoCuadroCafeobj.obj");
+	Kiosco_base = Model();
+	Kiosco_base.LoadModel("Models/basedekiosco.obj");
+	Kiosco2 = Model();
+	Kiosco2.LoadModel("Models/Techo2x2.obj");
+	Kiosco4 = Model();
+	Kiosco4.LoadModel("Models/Techo2x4.obj");
+	Kiosco6 = Model();
+	Kiosco6.LoadModel("Models/Techo2x6.obj");
+	Kiosco8 = Model();
+	Kiosco8.LoadModel("Models/Techo2x8.obj");
+	Kiosco10 = Model();
+	Kiosco10.LoadModel("Models/Techo2x10.obj");
+	Kiosco12 = Model();
+	Kiosco12.LoadModel("Models/Techo2x12.obj");
+	Kiosco14 = Model();
+	Kiosco14.LoadModel("Models/Techo2x14.obj");
+	Kiosco16 = Model();
+	Kiosco16.LoadModel("Models/Techo2x16.obj");
+	Kiosco18 = Model();
+	Kiosco18.LoadModel("Models/Techo2x18.obj");
+	Kiosco20 = Model();
+	Kiosco20.LoadModel("Models/Techo2x20.obj");
+	Kiosco_columnas = Model();
+	Kiosco_columnas.LoadModel("Models/columnas.obj");
+	Kiosco_punta = Model();
+	Kiosco_punta.LoadModel("Models/Cubo_lego_4x4.obj");
+	Escalones = Model();
+	Escalones.LoadModel("Models/Escalones.obj");
+	FocoAmarillo = Model();
+	FocoAmarillo.LoadModel("Models/FocoAmarillo.obj");
+	FocoAzul = Model();
+	FocoAzul.LoadModel("Models/FocoAzul.obj");
+	FocoVerde = Model();
+	FocoVerde.LoadModel("Models/FocoVerde.obj");
+	FocoRojo = Model();
+	FocoRojo.LoadModel("Models/FocoRojo.obj");
+	Sol = Model();
+	Sol.LoadModel("Models/sol.obj");
 	TRIKE = Model();
 	TRIKE.LoadModel("Models/TRIKE.obj");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
-		0.3f, 0.3f,
-		0.0f, 0.0f, -1.0f);
+		0.025f, 0.005f,
+		0.0f, -1.0f, 0.0f);
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
 	//Declaración de primer luz puntual
-	pointLights[0] = PointLight(1.0f, 0.0f, 0.0f,
-		0.0f, 1.0f,
+	pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
+		3.0f, 0.0f,
 		2.0f, 1.5f, 1.5f,
 		0.3f, 0.2f, 0.1f);
 	pointLightCount++;
+
+	pointLights[1] = PointLight(1.0f, 1.0f, 1.0f,
+		2.0f,1.0f,
+		-110.0f, 2.0f, -44.35f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+	
+	pointLights[2] = PointLight(1.0f, 1.0f, 1.0f,
+		2.0f, 1.0f,
+		-102.0f, 1.6f, -43.80f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+
+	pointLights[3] = PointLight(0.0f, 0.0f, 1.0f,
+		2.0f, 1.0f,
+		-104.0f, 1.7f, -43.8f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+	
+	pointLights[4] = PointLight(1.0f, 1.0f, 1.0f,
+		2.0f, 1.0f,
+		-120.0f, 1.7f, -43.8f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+	
+	pointLights[5] = PointLight(1.0f, 1.0f, 1.0f,
+	2.0f, 1.0f,
+	-101.0f, 1.6f, -37.8f,
+	0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+	
+	//luz azul
+	pointLights[6] = PointLight(0.0f, 0.0f, 1.0f,
+	2.0f, 1.0f,
+	-110.0f, 1.8f, -37.8f,
+	0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+	
+	pointLights[7] = PointLight(1.0f, 1.0f, 0.0f,
+		2.0f, 1.0f,
+		-115.0f, 1.8f, -37.8f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++; 
+	
+
+	pointLights[8] = PointLight(1.0f, 1.0f, 1.0f,
+		2.0f, 1.0f,
+		-120.0f, 1.8f, -38.0f,
+		0.9f, 0.9f, 0.2f);
+	pointLightCount++;
+
+
+
+
+
+
 
 	unsigned int spotLightCount = 0;
 	//linterna
@@ -280,13 +396,15 @@ int main()
 	spotLightCount++;
 
 	//luz fija
-	spotLights[1] = SpotLight(0.0f, 0.0f, 1.0f,
+	/*spotLights[1] = SpotLight(0.0f, 0.0f, 1.0f,
 		0.0f, 2.0f,
 		10.0f, 0.0f, 0.0f,
 		0.0f, -5.0f, 0.0f,
 		1.0f, 0.0f, 0.0f,
 		10.0f);
 	spotLightCount++;
+
+
 	//luz de faro
 	spotLights[2] = SpotLight(1.0f, 1.0f, 1.0f,
 		0.0f, 2.0f,
@@ -296,7 +414,7 @@ int main()
 		5.0f);
 	spotLightCount++;
 
-
+	*/
 	glm::vec3 posblackhawk = glm::vec3(2.0f, 0.0f, 0.0f);
 
 	std::vector<std::string> skyboxFaces;
@@ -487,14 +605,6 @@ int main()
 		Lampara3.RenderModel();
 		
 
-		//pino lego realista
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(50.0f, -2.0f, -50.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		Pino3.RenderModel();
-
 		//pino lego plano
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -70.0f));
@@ -511,13 +621,559 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Pino1.RenderModel();
 
-		//TRICERATIOPS
+
+		//pino lego realista
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(50.0f, -2.0f, -50.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		TRIKE.RenderModel();
+		Pino3.RenderModel();
+
+		//kiosco por modelado jerarquico
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-90.75f,7.25f,-40.248));
+		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 0.4f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_punta.RenderModel();
+		modelaux = model;
+
+		model = glm::translate(model, glm::vec3(2.0f,-1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-2.0f, -1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(0.0f, -4.0f, 3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(0.0f, -4.0f, -3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(0.0f, -5.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(0.0f, -5.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco2.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.5f, -2.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAzul.RenderModel();
+		//foco //acomodado
+		model = glm::translate(model, glm::vec3(0.5f, 0.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoVerde.RenderModel();
+		model = modelaux;
+
+
+
+		model = glm::translate(model, glm::vec3(3.0f, -2.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-3.0f, -2.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(3.0f, -2.0f, .0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(3.0f, -2.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-2.0f, -4.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(2.0f, -4.0f, 0.0f));
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco4.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(4.0f, -3.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco6.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-4.0f, -3.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco6.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(4.0f, -3.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco6.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(4.0f, -3.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco6.RenderModel();
+		model = modelaux;
+
+		modelaux = model;
+		model = glm::translate(model, glm::vec3(5.0f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco8.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-5.0f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco8.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(5.0f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco8.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.5f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAmarillo.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(5.0f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco8.RenderModel();
+		model = modelaux;
+		
+		model = glm::translate(model, glm::vec3(6.0f, -5.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco10.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-6.0f, -5.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco10.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.5f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAmarillo.RenderModel();
+		model = modelaux;
+
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(6.0f, -5.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco10.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(6.0f, -5.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco10.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(7.0f, -6.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco12.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-7.0f, -6.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco12.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(1.5f, -4.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAzul.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoRojo.RenderModel();
+
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(7.0f, -6.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco12.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(7.0f, -6.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco12.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.5f, -5.0f, 3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoVerde.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -8.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoVerde.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(8.0f, -7.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco14.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoVerde.RenderModel();
+		model = modelaux;
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-8.0f, -7.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco14.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoVerde.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(8.0f, -7.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco14.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(0.5f, -4.0f, 3.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAmarillo.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(8.0f, -7.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco14.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(9.0f, -8.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco16.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-9.0f, -8.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco16.RenderModel();
+
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(9.0f, -8.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco16.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(9.0f, -8.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco16.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(2.5f, -4.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoAzul.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(-3.0f, 0.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoRojo.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(10.0f, -9.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco18.RenderModel();
+		//foco
+		model = glm::translate(model, glm::vec3(1.5f, -4.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		FocoRojo.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-10.0f, -9.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco18.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(10.0f, -9.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco18.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(10.0f, -9.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco18.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(11.0f, -10.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco20.RenderModel();
+		model = modelaux;
+		model = glm::translate(model, glm::vec3(-11.0f, -10.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco20.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(11.0f, -10.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco20.RenderModel();
+		model = modelaux;
+		model = glm::rotate(model, -90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(11.0f, -10.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco20.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(2.0f, -1.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(-2.0f, -1.0f, 2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(-2.0f, -1.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(-1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = modelaux;
+
+		model = glm::translate(model, glm::vec3(2.0f, -1.0f, -2.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = glm::translate(model, glm::vec3(1.0f, -1.0f, -1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_madera.RenderModel();
+		model = modelaux;
+
+
+		
+
+
+
+
+
+
+
+
+
+		//columnas del kiosco
+		model = glm::translate(model, glm::vec3(0.0f, -19.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_columnas.RenderModel();
+
+		//base del kiosco esta ligado a las columnas por modelado jerarquico 
+		model = glm::translate(model, glm::vec3(0.0f, -4.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Kiosco_base.RenderModel();
+
+		//Escaleras, estan unidas por modelo jerarquico a la base
+		model = glm::translate(model, glm::vec3(-17.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Escalones.RenderModel();
+		model = modelaux;
+
+
+
+		//model = glm::rotate(model, 90 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -570,6 +1226,14 @@ int main()
 
 
 
+
+		//TRICERATIOPS BEBE
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		TRIKE.RenderModel();
 
 
 
