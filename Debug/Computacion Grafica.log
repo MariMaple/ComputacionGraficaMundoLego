@@ -8,8 +8,8 @@ c:\users\asus\documents\github\computaciongraficamundolego\directionallight.cpp(
   mainCode.cpp
 c:\users\asus\documents\github\computaciongraficamundolego\window.h(12): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\window.h(13): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(334): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(344): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(339): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(349): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   Material.cpp
   Mesh_tn.cpp
   Model.cpp
