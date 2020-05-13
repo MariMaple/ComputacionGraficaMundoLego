@@ -402,8 +402,9 @@ int main()
 		0.0f);
 	spotLightCount++;
 
+	/*
 	//luz fija
-	/*spotLights[1] = SpotLight(0.0f, 0.0f, 1.0f,
+	spotLights[1] = SpotLight(0.0f, 0.0f, 1.0f,
 		0.0f, 2.0f,
 		10.0f, 0.0f, 0.0f,
 		0.0f, -5.0f, 0.0f,
@@ -411,7 +412,7 @@ int main()
 		10.0f);
 	spotLightCount++;
 
-
+	
 	//luz de faro
 	spotLights[2] = SpotLight(1.0f, 1.0f, 1.0f,
 		0.0f, 2.0f,
@@ -420,8 +421,8 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		5.0f);
 	spotLightCount++;
-
 	*/
+	
 	glm::vec3 posblackhawk = glm::vec3(2.0f, 0.0f, 0.0f);
 
 	std::vector<std::string> skyboxFaces;
