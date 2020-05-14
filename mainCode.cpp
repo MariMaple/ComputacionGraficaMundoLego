@@ -107,7 +107,7 @@ Model Sol;
 Model TRIKE;
 Model bronto;
 Model raptor;
-
+Model volcan;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -322,6 +322,8 @@ int main()
 	bronto.LoadModel("Models/bronto.obj");
 	raptor = Model();
 	raptor.LoadModel("Models/raptor.obj");
+	volcan = Model();
+	volcan.LoadModel("Models/volcan.obj");
 
 	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
@@ -1197,6 +1199,14 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		raptor.RenderModel();
+
+		//volcan
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(10.0f, 8.95f, 60.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		volcan.RenderModel();
 
 
 
