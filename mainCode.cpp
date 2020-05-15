@@ -36,7 +36,7 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include"Model.h"
 #include "Skybox.h"
 #include"SpotLight.h"
-#include "mainCode.h"
+
 
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
@@ -121,7 +121,7 @@ Model TRIKE;
 
 Model Arbusto;
 Model Fuente;
-Model Baño;
+Model Banio;
 
 Model bronto;
 Model raptor;
@@ -457,8 +457,8 @@ int main()
 
 	Arbusto = Model();
 	Arbusto.LoadModel("Models/Arbusto.obj");
-	Baño = Model();
-	Baño.LoadModel("Models/Bano.obj");
+	Banio = Model();
+	Banio.LoadModel("Models/Bano.obj");
 	Fuente = Model();
 	Fuente.LoadModel("Models/Fuente.obj");
 	Reja = Model();
@@ -576,7 +576,7 @@ int main()
 		20.0f);
 	spotLightCount++;
 
-	/*
+	
 	//luz fija
 
 	spotLights[1] = SpotLight(1.0f, 0.0f, 0.0f,
@@ -1976,7 +1976,7 @@ int main()
 		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		Baño.RenderModel();
+		Banio.RenderModel();
 
 		//Cerca
 		
