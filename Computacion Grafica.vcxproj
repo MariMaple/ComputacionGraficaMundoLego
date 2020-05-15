@@ -24,6 +24,7 @@
     <ClInclude Include="definition.h" />
     <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="mainCode.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
@@ -134,13 +135,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>include;glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maria\Documents\Visual Studio 2019\Proyectos\Computacion Grafica\Computacion-Grafica-Proyecto;C:\Users\maria\Documents\Visual Studio 2019\Proyectos\Computacion Grafica\Computacion-Grafica-Proyecto\include;C:\Users\maria\Documents\Visual Studio 2019\Proyectos\Computacion Grafica\Computacion-Grafica-Proyecto\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>assimp-vc140-mt.lib;opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\maria\Documents\Visual Studio 2019\Proyectos\Computacion Grafica\Computacion-Grafica-Proyecto;C:\Users\maria\Documents\Visual Studio 2019\Proyectos\Computacion Grafica\Computacion-Grafica-Proyecto\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
