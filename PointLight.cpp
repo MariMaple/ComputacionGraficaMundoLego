@@ -35,6 +35,13 @@ void PointLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientcolor
 	glUniform1f(exponentLocation, exponent);
 }
 
+void PointLight::SetOnOff(GLfloat aIntensity, GLfloat dIntensity)
+{
+	ambientIntensity = aIntensity;
+	diffuseIntensity = dIntensity;
+
+}
+
 PointLight::~PointLight()
 {
 }
