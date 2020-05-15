@@ -1,8 +1,8 @@
 /*
 Arguelles Macosay Mariana
 Semestre 2020-2
-Texturizado: se agrega cÛdigo para transparencia y blending en el shader
-Skybox: Se agrega Skybox como textura ligada a la c·mara.
+Texturizado: se agrega c√≥digo para transparencia y blending en el shader
+Skybox: Se agrega Skybox como textura ligada a la c√°mara.
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -27,7 +27,7 @@ Skybox: Se agrega Skybox como textura ligada a la c·mara.
 #include "Shader_light.h"
 #include "Camera.h"
 #include "Texture.h"
-//para iluminaciÛn
+//para iluminaci√≥n
 #include "CommonValues.h"
 #include "DirectionalLight.h"
 #include "PointLight.h"
@@ -118,9 +118,15 @@ Model Sol;
 Model Conejo;
 Model sombrero;
 Model TRIKE;
+
 Model Arbusto;
 Model Fuente;
-Model BaÒo;
+Model Ba√±o;
+
+Model bronto;
+Model raptor;
+Model volcan;
+
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -140,7 +146,7 @@ static const char* vShader = "shaders/shader_light.vert";
 
 // Fragment Shader
 static const char* fShader = "shaders/shader_light.frag";
-//c·lculo del promedio de las normales para sombreado de Phong
+//c√°lculo del promedio de las normales para sombreado de Phong
 void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat* vertices, unsigned int verticeCount,
 	unsigned int vLength, unsigned int normalOffset)
 {
@@ -332,7 +338,7 @@ void animate(void)
 			}
 			else //Next frame interpolations
 			{
-				//printf("entro aquÌ\n");
+				//printf("entro aqu√≠\n");
 				i_curr_steps = 0; //Reset counter
 				//Interpolation
 				interpolation();
@@ -340,7 +346,7 @@ void animate(void)
 		}
 		else
 		{
-			//printf("se quedÛ aqui\n");
+			//printf("se qued√≥ aqui\n");
 			//printf("max steps: %f", i_max_steps);
 			//Draw animation
 			movConejo_x += KeyFrame[playIndex].movConejo_xInc;
@@ -448,10 +454,11 @@ int main()
 	Conejo.LoadModel("Models/Conejo.obj");
 	TRIKE = Model();
 	TRIKE.LoadModel("Models/TRIKE.obj");
+
 	Arbusto = Model();
 	Arbusto.LoadModel("Models/Arbusto.obj");
-	BaÒo = Model();
-	BaÒo.LoadModel("Models/Bano.obj");
+	Ba√±o = Model();
+	Ba√±o.LoadModel("Models/Bano.obj");
 	Fuente = Model();
 	Fuente.LoadModel("Models/Fuente.obj");
 	Reja = Model();
@@ -477,13 +484,21 @@ int main()
 	Elfo = Model();
 	Elfo.LoadModel("Models/Elfo_2.obj");
 
-	//luz direccional, sÛlo 1 y siempre debe de existir
+	bronto = Model();
+	bronto.LoadModel("Models/bronto.obj");
+	raptor = Model();
+	raptor.LoadModel("Models/raptor.obj");
+	volcan = Model();
+	volcan.LoadModel("Models/volcan.obj");
+
+
+	//luz direccional, s√≥lo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
 		0.3f, 0.3f,
 		0.0f, -1.0f, 0.0f);
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
-	//DeclaraciÛn de primer luz puntual
+	//Declaraci√≥n de primer luz puntual
 	pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
 		0.0f, 0.0f,
 		2.0f, 1.5f, 1.5f,
@@ -561,7 +576,9 @@ int main()
 		20.0f);
 	spotLightCount++;
 
+	/*
 	//luz fija
+
 	spotLights[1] = SpotLight(1.0f, 0.0f, 0.0f,
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
@@ -576,6 +593,7 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		15.0f);
 	spotLightCount++;
+
 	spotLights[3] = SpotLight(1.0f, 0.0f, 0.0f,
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
@@ -647,6 +665,7 @@ int main()
 		15.0f);
 	spotLightCount++;
 	spotLights[13] = SpotLight(0.0f, 1.0f, 0.0f,
+
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
 		0.0f, -1.0f, 0.0f,
@@ -661,8 +680,8 @@ int main()
 		15.0f);
 	spotLightCount++;
 
-
 	glm::vec3 ConejoMove = glm::vec3(2.0f, 0.0f, 0.0f);
+
 
 	std::vector<std::string> skyboxFaces;
 	skyboxFaces.push_back("Textures/Skybox/ri.tga");
@@ -1923,7 +1942,33 @@ int main()
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+
 		Fuente.RenderModel();
+		//bronto
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -1.8f, -3.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		bronto.RenderModel();
+
+		//raptor
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -5.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		raptor.RenderModel();
+
+		//volcan
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(10.0f, 8.95f, 60.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		volcan.RenderModel();
+
+
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-85.75f, -2.0f, -24.248f));
@@ -1931,7 +1976,7 @@ int main()
 		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		BaÒo.RenderModel();
+		Ba√±o.RenderModel();
 
 		//Cerca
 		
@@ -2574,7 +2619,7 @@ void inputKeyframes(bool* keys)
 				playIndex = 0;
 				i_curr_steps = 0;
 				reproduciranimacion++;
-				printf("presiona 0 para habilitar reproducir de nuevo la animaciÛn'\n");
+				printf("presiona 0 para habilitar reproducir de nuevo la animaci√≥n'\n");
 				habilitaranimacion = 0;
 				if (reproduciranimacion == 1) {
 					reproduciranimacion = 0;
