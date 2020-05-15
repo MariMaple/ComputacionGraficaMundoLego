@@ -19,6 +19,12 @@ public:
 	GLfloat getmueveluz2x() { return mueveluz2x; }
 	GLfloat getmueveluz2z() { return mueveluz2z; }
 	GLfloat getenciendeapaga() { return enciendeapaga; }
+	GLboolean getBailaLuz() { return BailaLuz; }
+	GLboolean getapaga() { return apaga; }
+	GLfloat getsalta() { return salta; }
+	GLfloat	 getescondido() { return escondido; }
+	GLfloat	 getsombrero() { return sombreros; }
+	GLfloat getvuelaconejo() { return vuelaconejo; }
 
 	bool getShouldClose() {
 		return  glfwWindowShouldClose(mainWindow);}
@@ -42,6 +48,12 @@ private:
 	GLfloat mueveluz2x;
 	GLfloat mueveluz2z;
 	GLfloat enciendeapaga;
+	GLboolean BailaLuz;
+	GLboolean apaga;
+	GLfloat salta;
+	GLfloat escondido;
+	GLfloat sombreros;
+	GLfloat vuelaconejo;
 
 	bool mouseFirstMoved;
 	static void ManejaTeclado(GLFWwindow* window, int key, int code, int action, int mode);

@@ -56,6 +56,12 @@ void SpotLight::SetColor(glm::vec3 col)
 	color = col;
 }
 
+void SpotLight::SetEdge(GLint edg)
+{
+	 edge = edg;
+	 procEdge = cosf(glm::radians(edge));
+}
+
 SpotLight::~SpotLight()
 {
 }

@@ -14,7 +14,7 @@ public:
 		GLfloat diffuseIntensityLocation, GLfloat directionLocation);
 
 	~DirectionalLight();
-
+	void SetOnOffDir(GLfloat aIntensity, GLfloat dIntensity);
 private:
 	glm::vec3 direction;
 };

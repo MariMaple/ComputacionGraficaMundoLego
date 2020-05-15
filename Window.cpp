@@ -14,12 +14,18 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 	width = windowWidth;
 	height = windowHeight;
 	muevex = 2.0f;
-	mueveluz1x = 3.0f;
-	mueveluz1z = 2.5f;
-	mueveluz2x = -2.0f;
-	mueveluz2z = 2.5f;
+	mueveluz1x = 15.0f;
+	mueveluz1z = 15.0f;
+	mueveluz2x = -15.0f;
+	mueveluz2z = -15.0f;
 	enciendeapaga = 20.0f;
-	
+	BailaLuz=false;
+	apaga = false;
+	salta = 0.0f;
+	escondido = 0.0f;
+	sombreros = 0.0f;
+	vuelaconejo = 0.0f;
+
 	for (size_t i = 0; i < 1024; i++)
 	{
 		keys[i] = 0;
@@ -111,6 +117,63 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	{
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	}
+
+
+
+
+
+	if (key == GLFW_KEY_C)
+	{
+		theWindow->escondido = 0;
+	}
+	if (key == GLFW_KEY_V)
+	{
+		theWindow->escondido = 2.3f;
+	}
+	if (key == GLFW_KEY_9)
+	{
+		theWindow->sombreros= 2.0f;
+	}
+	if (key == GLFW_KEY_8)
+	{
+		theWindow->sombreros = 0;
+	}
+
+
+	if (key == GLFW_KEY_B)
+	{
+		theWindow-> BailaLuz=1;
+	}
+	if (key == GLFW_KEY_N)
+	{
+		theWindow-> BailaLuz=0;
+	}
+
+	if (key == GLFW_KEY_G)
+	{
+		theWindow->apaga= true;
+	}
+	if (key == GLFW_KEY_H)
+	{
+		theWindow->apaga = false;
+	}
+
+	if (key == GLFW_KEY_Z)
+	{
+		theWindow->salta=1;
+	}
+	if (key == GLFW_KEY_X)
+	{
+		theWindow->salta = 0;
+	}
+	if (key == GLFW_KEY_5)
+	{
+		theWindow->vuelaconejo = 1;
+	}
+
+
+
+
 	if (key == GLFW_KEY_Y)
 	{
 		theWindow->muevex -= 0.5;
@@ -121,20 +184,12 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	}
 	if (key == GLFW_KEY_F)
 	{
-		theWindow->mueveluz1x -= 0.5;
-	}
-	if (key == GLFW_KEY_H)
-	{
 		theWindow->mueveluz1x += 0.5;
 	}
 
-	if (key == GLFW_KEY_G)
-	{
-		theWindow->mueveluz1z += 0.5;
-	}
 	if (key == GLFW_KEY_T)
 	{
-		theWindow->mueveluz1z -= 0.5;
+		theWindow->mueveluz1x -= 0.5;
 	}
 
 	if (key == GLFW_KEY_J)
@@ -148,11 +203,11 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 
 	if (key == GLFW_KEY_I)
 	{
-		theWindow->mueveluz2z -= 0.5;
+		theWindow->mueveluz2z += 0.5;
 	}
 	if (key == GLFW_KEY_K)
 	{
-		theWindow->mueveluz2z += 0.5;
+		theWindow->mueveluz2z -= 0.5;
 	}
 	if (key == GLFW_KEY_P)
 	{
