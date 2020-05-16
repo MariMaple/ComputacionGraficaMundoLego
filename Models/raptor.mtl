@@ -1,5 +1,16 @@
-# Blender MTL File: 'velociraptor.blend'
-# Material Count: 3
+# Blender MTL File: 'Dinosaur.blend'
+# Material Count: 5
+
+newmtl Material
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\verde.jpg
 
 newmtl Material.001
 Ns 323.999994
@@ -10,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\rt.jpg
+map_Kd C:\\bb.jpg
 
 newmtl Material.002
 Ns 323.999994
@@ -21,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\oo.jpg
+map_Kd C:\\o.jpg
 
 newmtl Material.003
 Ns 323.999994
@@ -32,4 +43,15 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\oo.jpg
+map_Kd C:\\bb.jpg
+
+newmtl Material.004
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\rojoCarne.jpg

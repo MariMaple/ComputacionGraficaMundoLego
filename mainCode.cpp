@@ -1,8 +1,8 @@
 /*
 Arguelles Macosay Mariana
 Semestre 2020-2
-Texturizado: se agrega cÃ³digo para transparencia y blending en el shader
-Skybox: Se agrega Skybox como textura ligada a la cÃ¡mara.
+Texturizado: se agrega código para transparencia y blending en el shader
+Skybox: Se agrega Skybox como textura ligada a la cámara.
 */
 //para cargar imagen
 #define STB_IMAGE_IMPLEMENTATION
@@ -27,7 +27,7 @@ Skybox: Se agrega Skybox como textura ligada a la cÃ¡mara.
 #include "Shader_light.h"
 #include "Camera.h"
 #include "Texture.h"
-//para iluminaciÃ³n
+//para iluminación
 #include "CommonValues.h"
 #include "DirectionalLight.h"
 #include "PointLight.h"
@@ -36,7 +36,7 @@ Skybox: Se agrega Skybox como textura ligada a la cÃ¡mara.
 #include"Model.h"
 #include "Skybox.h"
 #include"SpotLight.h"
-
+#include "mainCode.h"
 
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
@@ -117,16 +117,10 @@ Model FocoVerde;
 Model Sol;
 Model Conejo;
 Model sombrero;
-Model TRIKE;
-
+Model raptor;
 Model Arbusto;
 Model Fuente;
-Model Banio;
-
-Model bronto;
-Model raptor;
-Model volcan;
-
+Model Baño;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -146,7 +140,7 @@ static const char* vShader = "shaders/shader_light.vert";
 
 // Fragment Shader
 static const char* fShader = "shaders/shader_light.frag";
-//cÃ¡lculo del promedio de las normales para sombreado de Phong
+//cálculo del promedio de las normales para sombreado de Phong
 void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat* vertices, unsigned int verticeCount,
 	unsigned int vLength, unsigned int normalOffset)
 {
@@ -338,7 +332,7 @@ void animate(void)
 			}
 			else //Next frame interpolations
 			{
-				//printf("entro aquÃ­\n");
+				//printf("entro aquí\n");
 				i_curr_steps = 0; //Reset counter
 				//Interpolation
 				interpolation();
@@ -346,7 +340,7 @@ void animate(void)
 		}
 		else
 		{
-			//printf("se quedÃ³ aqui\n");
+			//printf("se quedó aqui\n");
 			//printf("max steps: %f", i_max_steps);
 			//Draw animation
 			movConejo_x += KeyFrame[playIndex].movConejo_xInc;
@@ -452,13 +446,12 @@ int main()
 	Sol.LoadModel("Models/sol.obj");
 	Conejo = Model();
 	Conejo.LoadModel("Models/Conejo.obj");
-	TRIKE = Model();
-	TRIKE.LoadModel("Models/TRIKE.obj");
-
+	raptor = Model();
+	raptor.LoadModel("Models/raptor.obj");
 	Arbusto = Model();
 	Arbusto.LoadModel("Models/Arbusto.obj");
-	Banio = Model();
-	Banio.LoadModel("Models/Bano.obj");
+	Baño = Model();
+	Baño.LoadModel("Models/Bano.obj");
 	Fuente = Model();
 	Fuente.LoadModel("Models/Fuente.obj");
 	Reja = Model();
@@ -484,21 +477,13 @@ int main()
 	Elfo = Model();
 	Elfo.LoadModel("Models/Elfo_2.obj");
 
-	bronto = Model();
-	bronto.LoadModel("Models/bronto.obj");
-	raptor = Model();
-	raptor.LoadModel("Models/raptor.obj");
-	volcan = Model();
-	volcan.LoadModel("Models/volcan.obj");
-
-
-	//luz direccional, sÃ³lo 1 y siempre debe de existir
+	//luz direccional, sólo 1 y siempre debe de existir
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
 		0.3f, 0.3f,
 		0.0f, -1.0f, 0.0f);
 	//contador de luces puntuales
 	unsigned int pointLightCount = 0;
-	//DeclaraciÃ³n de primer luz puntual
+	//Declaración de primer luz puntual
 	pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
 		0.0f, 0.0f,
 		2.0f, 1.5f, 1.5f,
@@ -576,9 +561,7 @@ int main()
 		20.0f);
 	spotLightCount++;
 
-	
 	//luz fija
-
 	spotLights[1] = SpotLight(1.0f, 0.0f, 0.0f,
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
@@ -593,7 +576,6 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		15.0f);
 	spotLightCount++;
-
 	spotLights[3] = SpotLight(1.0f, 0.0f, 0.0f,
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
@@ -665,7 +647,6 @@ int main()
 		15.0f);
 	spotLightCount++;
 	spotLights[13] = SpotLight(0.0f, 1.0f, 0.0f,
-
 		0.0f, 2.0f,
 		0.0f, 0.0f, 0.0f,
 		0.0f, -1.0f, 0.0f,
@@ -680,8 +661,8 @@ int main()
 		15.0f);
 	spotLightCount++;
 
-	glm::vec3 ConejoMove = glm::vec3(2.0f, 0.0f, 0.0f);
 
+	glm::vec3 ConejoMove = glm::vec3(2.0f, 0.0f, 0.0f);
 
 	std::vector<std::string> skyboxFaces;
 	skyboxFaces.push_back("Textures/Skybox/ri.tga");
@@ -1942,33 +1923,7 @@ int main()
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-
 		Fuente.RenderModel();
-		//bronto
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -1.8f, -3.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		bronto.RenderModel();
-
-		//raptor
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -5.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		raptor.RenderModel();
-
-		//volcan
-		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(10.0f, 8.95f, 60.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		volcan.RenderModel();
-
-
 
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(-85.75f, -2.0f, -24.248f));
@@ -1976,7 +1931,7 @@ int main()
 		model = glm::rotate(model, 180 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		Banio.RenderModel();
+		Baño.RenderModel();
 
 		//Cerca
 		
@@ -2325,16 +2280,15 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Arbusto.RenderModel();
-/*
-		//TRICERATIOPS BEBE
+
+		//raptor
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		TRIKE.RenderModel();
+		raptor.RenderModel();
 
-*/
 
 
 		/*
@@ -2619,7 +2573,7 @@ void inputKeyframes(bool* keys)
 				playIndex = 0;
 				i_curr_steps = 0;
 				reproduciranimacion++;
-				printf("presiona 0 para habilitar reproducir de nuevo la animaciÃ³n'\n");
+				printf("presiona 0 para habilitar reproducir de nuevo la animación'\n");
 				habilitaranimacion = 0;
 				if (reproduciranimacion == 1) {
 					reproduciranimacion = 0;
