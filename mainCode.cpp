@@ -125,6 +125,8 @@ Model rex;
 Model rex1;
 Model volcano;
 Model estego;
+Model p;
+Model m;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -468,7 +470,10 @@ int main()
 	volcano.LoadModel("Models/volcano.obj");
 	estego = Model();
 	estego.LoadModel("Models/estego.obj");
-
+	p = Model();
+	p.LoadModel("Models/p.obj");
+	m = Model();
+	m.LoadModel("Models/m.obj");
 
 	//Elfo
 	Elfo_cabeza = Model();
@@ -1028,27 +1033,98 @@ int main()
 	
 		//Arbol
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(25.0f, -2.0f, -80.0f));
+		model = glm::translate(model, glm::vec3(-150.0f, -2.0f, 200.0f));
 		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Arbol.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-150.0f, -2.0f, 150.0f));
+		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+
+		
 		modelaux = model;
 		model = glm::translate(model, glm::vec3(-30.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Arbol.RenderModel();
-		model = glm::translate(model, glm::vec3(-30.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-30.0f, 0.0f, -60.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Arbol.RenderModel();
-		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.f, 1.2f, 1.2f));
+		model = glm::translate(model, glm::vec3(-50.0f, 0.0f, -80.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, 10.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, -50.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, 100.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+		model = glm::translate(model, glm::vec3(50.0f, 0.0f, 50.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Arbol.RenderModel();
 
+		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 60.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
 
+		//Pino2
+	
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-180.0f, -2.0f, 100.0f));
+		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Pino2.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-100.0f, -2.0f, 200.0f));
+		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Pino2.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-130.0f, -2.0f, 170.0f));
+		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Pino2.RenderModel();
+
+		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 60.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Arbol.RenderModel();
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-100.0f, -2.0f, 130.0f));
+		model = glm::scale(model, glm::vec3(0.6f, 0.6f, 0.6f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		Pino2.RenderModel();
 
 		//Camino
 		model = glm::mat4(1.0);
@@ -2511,7 +2587,8 @@ int main()
 
 		//estego
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 30.0f));
+		model = glm::translate(model, glm::vec3(-150.0f, -2.0f, 100.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -2527,6 +2604,23 @@ int main()
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		volcano.RenderModel();
 
+		//piedra
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-200.0f, -2.0f, 150.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		p.RenderModel();
+
+		//montaña
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-150.0f, -4.0f, 250.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		m.RenderModel();
 
 
 		/*
