@@ -122,7 +122,9 @@ Model Arbusto;
 Model Fuente;
 Model Baño;
 Model rex;
+Model rex1;
 Model volcano;
+Model estego;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -460,8 +462,13 @@ int main()
 	Reja.LoadModel("Models/Cerca.obj");
 	rex = Model();
 	rex.LoadModel("Models/rex.obj");
+	rex1 = Model();
+	rex1.LoadModel("Models/rex1.obj");
 	volcano = Model();
 	volcano.LoadModel("Models/volcano.obj");
+	estego = Model();
+	estego.LoadModel("Models/estego.obj");
+
 
 	//Elfo
 	Elfo_cabeza = Model();
@@ -2302,6 +2309,23 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		rex.RenderModel();
+
+		//rex1
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 50.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		rex1.RenderModel();
+
+		//estego
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 30.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		estego.RenderModel();
+
 
 		//volcan
 		model = glm::mat4(1.0);
