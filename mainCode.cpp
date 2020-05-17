@@ -121,6 +121,7 @@ Model raptor;
 Model Arbusto;
 Model Fuente;
 Model Baño;
+Model rex;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -456,6 +457,8 @@ int main()
 	Fuente.LoadModel("Models/Fuente.obj");
 	Reja = Model();
 	Reja.LoadModel("Models/Cerca.obj");
+	rex = Model();
+	rex.LoadModel("Models/rex.obj");
 
 	//Elfo
 	Elfo_cabeza = Model();
@@ -2288,6 +2291,15 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		raptor.RenderModel();
+
+		//rex
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 20.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		rex.RenderModel();
+
 
 
 
