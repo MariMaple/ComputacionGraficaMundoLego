@@ -987,8 +987,8 @@ int main()
 
 		//piso
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 100.0f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.083f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		Piso.RenderModel();
