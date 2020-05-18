@@ -1,5 +1,6 @@
 /*
 Arguelles Macosay Mariana
+Chávez Magaña Manuel
 Semestre 2020-2
 Texturizado: se agrega código para transparencia y blending en el shader
 Skybox: Se agrega Skybox como textura ligada a la cámara.
