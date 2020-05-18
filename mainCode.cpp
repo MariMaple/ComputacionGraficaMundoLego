@@ -3192,14 +3192,14 @@ void inputKeyframes(bool* keys)
 
 
 
-	if (keys[GLFW_KEY_X])
+	if (keys[GLFW_KEY_Q])
 		if (b1 == false)
 		{
 			b2 = true;
 		}
 
 
-	if (keys[GLFW_KEY_Z])
+	if (keys[GLFW_KEY_E])
 		if (b2 == false)
 		{
 			b1 = true;
