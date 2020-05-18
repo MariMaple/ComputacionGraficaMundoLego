@@ -130,6 +130,7 @@ Model estego;
 Model p;
 Model m;
 Model h;
+Model terodactilo;
 
 Skybox skybox;
 Skybox skybox_dia;
@@ -496,6 +497,11 @@ int main()
 	Elfo_pecho.LoadModel("Models/Elfo_pecho.obj");
 	sombrero = Model();
 	sombrero.LoadModel("Models/Sombrero.obj");
+	terodactilo = Model();
+	terodactilo.LoadModel("Models/terodactilo.obj");
+
+
+
 
 	//Elfo completo 
 	Elfo = Model();
@@ -2749,7 +2755,7 @@ int main()
 
 		//Conejo animacion compleja
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(saltax, saltay-2.0f,0.0f));
+		model = glm::translate(model, glm::vec3(saltax-40.0f, saltay-2.0f,0.0f));
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
 		model = glm::rotate(model, gira_conejo * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -2808,7 +2814,7 @@ int main()
 	
 		//Conejo Animacion Sencilla con sombrero
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(10.5f, mainWindow.getsombrero()-2.0, 10.0f));
+		model = glm::translate(model, glm::vec3(-20.5f, mainWindow.getsombrero()-2.0, 10.0f));
 		model = glm::scale(model, glm::vec3(0.6f, 0.8f, 0.6f));
 		//model = glm::rotate(model, 0 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -2816,7 +2822,7 @@ int main()
 		sombrero.RenderModel();
 		//Conejo Animacion Sencilla
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(10.0f, mainWindow.getescondido()-2.0, 10.0f));
+		model = glm::translate(model, glm::vec3(-20.0f, mainWindow.getescondido()-2.0, 10.0f));
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		Material_opaco.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -2861,7 +2867,13 @@ int main()
 		
 
 
-
+		// terodactilo keyframes
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, 75.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		terodactilo.RenderModel();
 
 
 		//recorrido
