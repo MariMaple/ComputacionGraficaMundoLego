@@ -38,8 +38,20 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include"SpotLight.h"
 #include "mainCode.h"
 
-float movz=0.0f;
+float movz = 0.0f;
+float movz2 = -40.0f;
+float movx = -150.0f;
+float rotx = 10.0f;
+float movy = 0.0f;
 bool b1 = false;
+bool b2 = false;
+bool etapa1 = false;
+bool etapa2 = false;
+bool etapa3 = false;
+bool etapa4 = false;
+bool etapa5 = false;
+bool etapa6 = false;
+bool etapa7 = false;
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
 float movOffset;
@@ -2900,6 +2912,135 @@ int main()
 		}
 
 
+
+
+		//recorrido2
+		if (b2 == true)
+		{
+			camera = Camera(glm::vec3(movx, movy, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+			if (movx <= -105.0 && etapa2 == false)
+			{
+				movx += 0.1f;
+				camera = Camera(glm::vec3(movx, 0.0f, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+
+			}
+			else
+			{
+				etapa1 = true;
+			}
+
+			if (etapa1 == true && etapa3 == false && etapa5 == false)
+			{
+				if (rotx <= 180)
+				{
+					rotx += 0.5;
+					camera = Camera(glm::vec3(movx, 0.0f, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+				}
+				else
+				{
+					etapa2 = true;
+				}
+			}
+
+			if (etapa2 == true && etapa5 == false)
+			{
+				if (movx >= -160)
+				{
+					movx -= 0.1f;
+					camera = Camera(glm::vec3(movx, 0.0f, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+				}
+				else 
+				{
+					etapa3 = true;
+				}
+			}
+
+			if (etapa3 == true && etapa5 == false)
+			{
+				if(rotx >=100)
+				{
+					rotx -= 0.5f;
+					camera = Camera(glm::vec3(movx, 0.0f, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+
+				}
+				else
+				{
+					etapa4 = true;
+				}
+			}
+
+			if (etapa4 == true && etapa5 == false)
+			{
+				
+				if (movz2 <= 70)
+				{
+					movz2 += 0.1f;
+					camera = Camera(glm::vec3(movx, 0.0f, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+				}
+				else 
+				{
+					etapa5 = true;
+				}
+
+	
+			}
+
+			if (etapa5 == true)
+			{
+				if(rotx >= 10)
+				{
+					rotx -= 0.5f;
+					
+				}
+				else 
+				{
+					etapa6 = true;
+				}
+
+			}
+
+			if( etapa6 == true)
+			{
+				if (movy <= 40)
+				{
+					movy += 0.1f;
+					camera = Camera(glm::vec3(movx, movy, movz2), glm::vec3(0.0f, 1.0f, 0.0f), rotx, 0.0f, 5.0f, 0.5f);
+				}
+				else
+				{
+					etapa7 = true;
+				}
+			}
+			
+
+			if ( etapa7 == true)
+			{
+				
+				movz = 0.0f;
+				movz2 = -40.0f;
+				movx = -150.0f;
+				rotx = 10.0f;
+				movy = 0.0f;
+				etapa1 = false;
+				etapa2 = false;
+				etapa3 = false;
+				etapa4 = false;
+				etapa5 = false;
+				etapa6 = false;
+				b2 = false;
+				etapa7 = false;
+			}
+
+
+		}
+	
+
+	
+
+
+
+
+
 		//sol
 		if (dia) {
 			model = glm::mat4(1.0);
@@ -3061,11 +3202,19 @@ void inputKeyframes(bool* keys)
 
 
 
+	if (keys[GLFW_KEY_X])
+		if (b1 == false)
+		{
+			b2 = true;
+		}
+
+
 	if (keys[GLFW_KEY_Z])
-	{
-	
-		b1 = true;
-		
-	}
+		if (b2 == false)
+		{
+			b1 = true;
+		}
+
+
 
 }
