@@ -2755,7 +2755,7 @@ int main()
 
 		//Conejo animacion compleja
 		model = glm::mat4(1.0);
-		model = glm::translate(model, glm::vec3(saltax-40.0f , saltay-2.0f,0.0f));
+		model = glm::translate(model, glm::vec3(saltax-40.0f, saltay-2.0f,0.0f));
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
 		model = glm::rotate(model, gira_conejo * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
