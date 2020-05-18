@@ -806,6 +806,9 @@ int main()
 	float VuelaConejo=0.0f;
 	int CuentaConejo = 0;
 
+	float mueve_sol_x=-200.0f;
+	float mueve_sol_y = 0.0f;
+
 	apagado = true;
 
 	int tempo=0;
@@ -931,6 +934,10 @@ int main()
 				spotLights[12].SetEdge(15);
 				spotLights[13].SetEdge(15);
 				spotLights[14].SetEdge(15);
+
+
+
+
 			}
 			else {
 				skybox = skybox_dia;
@@ -2867,7 +2874,7 @@ int main()
 		
 
 
-		// terodactilo keyframes
+		// terodactilo
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 75.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
@@ -2893,9 +2900,24 @@ int main()
 		}
 
 
+		//sol
+		if (dia) {
+			model = glm::mat4(1.0);
+			model = glm::translate(model, glm::vec3(mueve_sol_x, mueve_sol_y-2.0f, 0.0f));
+			model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+			glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+			Material_brillante.UseMaterial(uniformSpecularIntensity, uniformShininess);
+			Sol.RenderModel();
 
+			mueve_sol_x += 0.083f;
+			mueve_sol_y = (-0.01f) * (mueve_sol_x * mueve_sol_x) + 100.0f;
+			
 
-
+		}
+		else {
+			mueve_sol_y = mueve_sol_y - 2.0f;
+			mueve_sol_x = -200.0f;
+		}
 
 
 
