@@ -38,6 +38,8 @@ Skybox: Se agrega Skybox como textura ligada a la cámara.
 #include"SpotLight.h"
 #include "mainCode.h"
 
+float movz=0.0f;
+bool b1 = false;
 const float toRadians = 3.14159265f / 180.0f;
 float movCoche;
 float movOffset;
@@ -2862,7 +2864,21 @@ int main()
 
 
 
-
+		//recorrido
+		if (b1 == true) 
+		{
+			camera = Camera(glm::vec3(-50.0f, 0.0f, movz), glm::vec3(0.0f, 1.0f, 0.0f), 10.0f, 0.0f, 5.0f, 0.5f);
+			if (movz <= 200.0)
+			{
+				movz += 0.1f;
+				camera = Camera(glm::vec3(-50.0f, 0.0f, movz), glm::vec3(0.0f, 1.0f, 0.0f), 10.0f, 0.0f, 5.0f, 0.5f);
+			}
+			else
+			{
+				b1 = false;
+				movz = 0.0f;
+			}
+		}
 
 
 
@@ -3013,12 +3029,8 @@ void inputKeyframes(bool* keys)
 
 	if (keys[GLFW_KEY_Z])
 	{
-
-		camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -100.0f, 0.0f, 5.0f, 0.5f);
-		
-
-
-
+	
+		b1 = true;
 		
 	}
 

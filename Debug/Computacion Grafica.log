@@ -1,10 +1,8 @@
 ﻿  mainCode.cpp
 c:\users\asus\documents\github\computaciongraficamundolego\window.h(12): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\window.h(13): warning C4244: 'return': conversión de 'GLint' a 'GLfloat'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(568): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(725): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(730): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(731): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(570): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(727): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(732): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(733): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(734): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
@@ -17,11 +15,11 @@ c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(740): wa
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(741): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(742): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(743): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(744): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(745): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(746): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(747): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(748): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(749): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(750): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(751): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(752): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(753): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
@@ -59,9 +57,9 @@ c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(784): wa
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(785): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(786): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(787): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(894): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2103): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2104): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(788): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(789): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(896): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2105): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2106): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2107): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
@@ -74,8 +72,8 @@ c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2113): w
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2114): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2115): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2116): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2136): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2137): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2117): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2118): warning C4244: 'argumento': conversión de 'float' a 'GLint'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2138): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2139): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2140): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
@@ -130,5 +128,7 @@ c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2188): w
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2189): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2190): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2191): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2912): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2192): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2193): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\asus\documents\github\computaciongraficamundolego\maincode.cpp(2928): warning C4244: 'argumento': conversión de 'GLfloat' a 'GLint'; posible pérdida de datos
   Computacion Grafica.vcxproj -> C:\Users\ASUS\Documents\GitHub\ComputacionGraficaMundoLego\Debug\Computacion Grafica.exe
