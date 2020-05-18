@@ -695,23 +695,23 @@ int main()
 	glm::vec3 ConejoMove = glm::vec3(2.0f, 0.0f, 0.0f);
 
 	std::vector<std::string> skyboxFaces;
-	skyboxFaces.push_back("Textures/Skybox/ri.tga");
-	skyboxFaces.push_back("Textures/Skybox/l.tga");
+	skyboxFaces.push_back("Textures/Skybox/r.tga");
+	skyboxFaces.push_back("Textures/Skybox/r.tga");
 	skyboxFaces.push_back("Textures/Skybox/b.tga");
 	skyboxFaces.push_back("Textures/Skybox/u.tga");
 	skyboxFaces.push_back("Textures/Skybox/r.tga");
-	skyboxFaces.push_back("Textures/Skybox/f.tga");
+	skyboxFaces.push_back("Textures/Skybox/r.tga");
 
 	skybox_dia = Skybox(skyboxFaces);
 
 
 	skyboxFaces.clear();
-	skyboxFaces.push_back("Textures/Skybox/ri_n.tga");
-	skyboxFaces.push_back("Textures/Skybox/l_n.tga");
-	skyboxFaces.push_back("Textures/Skybox/b_n.tga");
+	skyboxFaces.push_back("Textures/Skybox/r_n.tga");
+	skyboxFaces.push_back("Textures/Skybox/r_n.tga");
+	skyboxFaces.push_back("Textures/Skybox/b.tga");
 	skyboxFaces.push_back("Textures/Skybox/u_n.tga");
 	skyboxFaces.push_back("Textures/Skybox/r_n.tga");
-	skyboxFaces.push_back("Textures/Skybox/f_n.tga");
+	skyboxFaces.push_back("Textures/Skybox/r_n.tga");
 
 	skybox_noche = Skybox(skyboxFaces);
 
