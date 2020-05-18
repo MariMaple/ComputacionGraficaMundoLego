@@ -17,6 +17,7 @@ public:
 
 	~PointLight();
 	void SetOnOff(GLfloat aIntensity, GLfloat dIntensity);
+	void SetPos(glm::vec3 pos);
 protected:
 	glm::vec3 position;
 

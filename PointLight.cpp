@@ -42,6 +42,13 @@ void PointLight::SetOnOff(GLfloat aIntensity, GLfloat dIntensity)
 
 }
 
+void PointLight::SetPos(glm::vec3 pos)
+{
+	position = pos;
+}
+
+
+
 PointLight::~PointLight()
 {
 }
